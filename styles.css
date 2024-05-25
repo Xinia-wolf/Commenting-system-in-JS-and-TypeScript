@@ -145,8 +145,21 @@
   color: rgb(0, 0, 0, 0.4);
 }
 
-.comment__form-button {
+.comment__form-buttonContainer {
   width: 20.8%;
+}
+
+.comment__form-message {
+  font-family: "Inter Regular", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  color: red; /* Цвет текста ошибки */
+  visibility: hidden;
+}
+
+.comment__form-button {
+  margin-top: 20px;
+  width: 100%;
   height: 61px;
   border-radius: 5px;
   background-color: #a1a1a1;
@@ -154,7 +167,6 @@
   font-size: 18px;
   color: rgb(0, 0, 0, 0.4);
   border: none;
-  margin-top: 37px;
 }
 
 .comment__form-button:hover {

@@ -48,9 +48,12 @@
             required
           ></textarea>
         </div>
-        <button class="comment__form-button" type="submit" disabled>
-          Отправить
-        </button>
+        <div class="comment__form-buttonContainer">
+          <span class="comment__form-message">Слишком длинное сообщение</span>
+          <button class="comment__form-button" type="submit" disabled>
+            Отправить
+          </button>
+        </div>
       </form>
       <ul id="commentsList"></ul>
     </div>

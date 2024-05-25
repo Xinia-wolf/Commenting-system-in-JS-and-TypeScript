@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const limitElement = document.querySelector(".comment__form-limit");
   const textarea = document.querySelector(".comment__form-text");
   const submitButton = document.querySelector(".comment__form-button");
+  const messageSpan = document.querySelector(".comment__form-message");
 
   // Инициализация кнопки в состоянии "неактивной"
   submitButton.disabled = true;
@@ -19,9 +20,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (textLength > maxLimit) {
       limitElement.style.color = "red";
       commentForm.setAttribute("disabled", true); // Запрещаем отправку формы
+      messageSpan.style.visibility = "visible"; // Отображаем сообщение
     } else {
       limitElement.style.color = ""; // Сброс цвета, если все в порядке
       commentForm.removeAttribute("disabled"); // Разрешаем отправку формы
+      messageSpan.style.visibility = "hidden";
     }
 
     // Динамическое изменение высоты textarea
@@ -47,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const maxLimit = 1000;
 
     if (textLength > maxLimit) {
-      alert("Количество символов превышает допустимый лимит.");
       event.preventDefault(); // Отмена отправки формы
     }
   });
