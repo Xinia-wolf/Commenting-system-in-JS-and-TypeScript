@@ -1,25 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Система комментирования на JS + Typescript</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="reset.css" />
   </head>
   <body>
-    <form id="commentForm">
-      <textarea
-        id="commentText"
-        name="commentText"
-        rows="4"
-        cols="50"
-        required
-      ></textarea
-      ><br />
-      <button type="submit">Отправить</button>
-    </form>
-    <ul id="commentsList"></ul>
-
+    <div class="main-container">
+      <nav class="comment__nav-panel">
+        <h6 class="comment__header">Комментарии</h6>
+        <p class="comment__filter">
+          По количеству оценок<img
+            src="./assets/Arrow 1.svg"
+            class="arrow-icon"
+            alt="arrow"
+          />
+        </p>
+        <p class="comment__favorites">
+          Избранное<img
+            src="./assets/Favorites.svg"
+            class="heart-icon"
+            alt="heart_icon"
+          />
+        </p>
+      </nav>
+      <form class="comment__form">
+        <!-- Аватарка пользователя -->
+        <div class="comment__form__avatar-container">
+          <img
+            src="./assets/Avatar.jpg"
+            class="comment__form-avatar"
+            alt="Аватар пользователя"
+          />
+        </div>
+        <div class="comment__form-container">
+          <div class="comment__form-innerContainer">
+            <!-- Имя пользователя -->
+            <p class="comment__form-userName">Максим Авдеенко</p>
+            <span class="comment__form-limit">Макс. 1000 символов</span>
+          </div>
+          <textarea
+            class="comment__form-text"
+            name="commentText"
+            placeholder="Введите текст сообщения..."
+            required
+          ></textarea>
+        </div>
+        <button class="comment__form-button" type="submit" disabled>
+          Отправить
+        </button>
+      </form>
+      <ul id="commentsList"></ul>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
